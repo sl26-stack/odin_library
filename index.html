@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <div>
+        <form id="form" action="#" method="post">
+            <fieldset>
+                <div>
+                    <label for="title">Book Title
+                        <input type="text" id="title" name="title">
+                    </label>
+                </div>
+                <div>
+                    <label for="author">Author
+                        <input type="text" id="author" name="author">
+                    </label>
+                </div>
+                <div>
+                    <label for="pages">Pages Read
+                        <input type="text" id="pages" name="pages">
+                    </label>
+                </div>
+                <div>
+                    <label for="read">Read or Not
+                        <input type="checkbox" id="read" name="read">
+                    </label>
+                </div>
+                
+                <button class="btn">Add New Book</button>
+            </fieldset>
+        </form>
+    </div>
+    <div id="tableContainer">
+
+    </div>
     
 </body>
 </html>
