@@ -1,19 +1,4 @@
-const myLibrary = [
-    {
-        title: "The Hobbit",
-        author: "JRR Tolkien",
-        pages: 20,
-        read: "Yes",
-        id:"125"
-    }, 
-    {
-        title: "Twilight",
-        author: "Stephanie Meyer",
-        pages: 150,
-        read: "No",
-        id:"265"
-    }
-];
+const myLibrary = [];
 
 function Book(title, author, pages, read) {
     if (!new.target) {
