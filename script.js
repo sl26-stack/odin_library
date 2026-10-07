@@ -67,7 +67,7 @@ function displayLibrary(myLibrary) {
 
         const removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove Book";
-        removeBtn.className = "removeBtn"
+        removeBtn.className = "removeBtn";
         removeBtn.id = book.id;
 
         actionCell.appendChild(removeBtn);
@@ -77,7 +77,8 @@ function displayLibrary(myLibrary) {
 
         const readChangeBtn = document.createElement("button");
         readChangeBtn.textContent = "Change Read Status";
-        readChangeBtn.id = "readChangeBtn";
+        readChangeBtn.className = "readChangeBtn";
+        readChangeBtn.id = book.id;
 
         readCell.appendChild(readChangeBtn);
 
@@ -110,18 +111,21 @@ tableContainer.addEventListener("click", function(event) {
     event.preventDefault();
 
     const buttonClicked = event.target;
+    const buttonID = buttonClicked.id;
+    const indexOfID = myLibrary.findIndex(book => book.id === buttonID);
     
     if (buttonClicked.className == "removeBtn") {
-        const buttonID = buttonClicked.id;
+        myLibrary.splice(indexOfID, 1);
 
-        const indexOfID = myLibrary.findIndex(book => book.id === buttonID);
-        if (indexOfID != -1) {
-            myLibrary.splice(indexOfID, 1)
-        }
-        
+    } else if (buttonClicked.className == "readChangeBtn" && myLibrary[indexOfID].read == "Yes") {
+        myLibrary[indexOfID].read = "No";
+
+    } else if (buttonClicked.className == "readChangeBtn" && myLibrary[indexOfID].read == "No") {
+        myLibrary[indexOfID].read = "Yes";
+
     };
+
     displayLibrary(myLibrary);
 });
-
 
 displayLibrary(myLibrary);
